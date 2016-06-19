@@ -1,4 +1,4 @@
-# ANewSkyRuby
+# A New Sky
 
 ## How to play
 

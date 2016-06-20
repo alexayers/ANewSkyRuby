@@ -14,8 +14,14 @@ class Room27 < Scene
     super
     addBackgroundImage('room27/room27_1b.png')
 
-    addDoor(Door.new(0, 0, 350, 145,'room2','walk_building.ogg'))
-    addDoor(Door.new(0, 237, 350, 350,'room2','walk_building.ogg'))
+    addDoor(Door.new(0, 0, 350, 145)
+                .destination('room2')
+                .walkSound('walk_building.ogg')
+    )
+    addDoor(Door.new(0, 237, 350, 350)
+                .destination('room2')
+                .walkSound('walk_building.ogg')
+    )
 
     addItem(Item.new(66, 180, 140, 215)
                 .title('bed_photo')
@@ -26,12 +32,12 @@ class Room27 < Scene
       addBackgroundImage('room27/room27_1bb.png')
 
       _photo = Item.new(nil, nil, nil, nil)
-                    .filename('photo.png')
-                    .title('photo')
+                   .filename('photo.png')
+                   .title('photo')
 
       Inventory.instance.addToInventory(_photo)
       ItemManager.instance.getItem('bed_photo')
-      .makeUnclickable
+          .makeUnclickable
     })
 
     addAmbience('bad_light.ogg')

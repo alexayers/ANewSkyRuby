@@ -14,12 +14,20 @@ class Room2 < Scene
 
     addAmbience('bad_light.ogg')
 
-    addDoor(Door.new(298, 0, 350, 350,'room1','walk_building.ogg'))
-    addDoor(Door.new(0, 121, 50, 333,'room3','walk_building.ogg')
-    .key('key')
-        .clickSound('key_locked.ogg')
+    addDoor(Door.new(298, 0, 350, 350)
+                .destination('room1')
+                .walkSound('walk_building.ogg')
     )
-    addDoor(Door.new(154, 201, 242, 267,'room27','walk_building.ogg'))
+
+    addDoor(Door.new(0, 121, 50, 333)
+                .destination('room3')
+                .walkSound('walk_building.ogg')
+                .key('key')
+                .clickSound('key_locked.ogg')
+    )
+    addDoor(Door.new(154, 201, 242, 267)
+                .destination('room27')
+                .walkSound('walk_building.ogg'))
   end
 
 

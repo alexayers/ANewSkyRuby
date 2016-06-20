@@ -9,18 +9,30 @@ require 'gosu'
 
 class Door
 
-  def initialize(lx, ly, hx, hy, destination, walkSound, isLocked = false)
+  def initialize(lx, ly, hx, hy)
     @lx = lx
     @ly = ly
     @hx = hx
     @hy = hy
     @title = nil
     @key = nil
-    @destination = destination
-    @isLocked = isLocked
+    @isLocked = false
     @clickSound = nil
-    @walkSound = walkSound
+    return self
+  end
 
+  def destination(destination)
+    @destination = destination
+    return self
+  end
+
+  def walkSound(filename)
+    @walkSound = filename
+    return self
+  end
+
+  def lockDoor
+    @isLocked = true
     return self
   end
 

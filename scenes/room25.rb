@@ -18,8 +18,14 @@ class Room25 < Scene
     addBackgroundImage('room25/room25_3b.png')
     addBackgroundImage('room25/room25_4b.png')
 
-    addDoor(Door.new(0, 0, 47, 253, 'room19', 'walk_building.ogg'))
-    addDoor(Door.new(291, 0, 350, 249, 'room19', 'walk_building.ogg'))
+    addDoor(Door.new(0, 0, 47, 253)
+                .destination('room19')
+                .walkSound('walk_building.ogg')
+    )
+    addDoor(Door.new(291, 0, 350, 249)
+                .destination('room19')
+                .walkSound('walk_building.ogg')
+    )
 
     addItem(Item.new(53, 219, 106, 252)
                 .clickable
@@ -57,10 +63,10 @@ class Room25 < Scene
 
       if _mapPadEnter.getValue == 'ready'
 
-        _storageDevice = Item.new(nil,nil,nil,nil)
-        .value('gps_loaded')
-        .title('gpsDevice')
-        .filename('storage.png')
+        _storageDevice = Item.new(nil, nil, nil, nil)
+                             .value('gps_loaded')
+                             .title('gpsDevice')
+                             .filename('storage.png')
 
         clearMiddleground
         clearForeground

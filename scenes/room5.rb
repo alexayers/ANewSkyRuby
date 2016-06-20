@@ -20,10 +20,16 @@ class Room5 < Scene
     addMiddlegroundImage('room5/room5_1m.png')
     addMiddlegroundImage('room5/room5_2m.png')
 
-    addDoor(Door.new(154, 131, 247, 267, 'room18', 'slide_door.ogg', true)
+    addDoor(Door.new(154, 131, 247, 267)
+                .destination('room18')
+                .walkSound('slide_door.ogg')
+                .lockDoor
                 .title('slide_door')
     )
-    addDoor(Door.new(306, 0, 350, 350, 'room4', 'walk_sand.ogg'))
+    addDoor(Door.new(306, 0, 350, 350)
+                .destination('room4')
+                .walkSound('walk_sand.ogg')
+    )
 
 
     addItem(Item.new(270, 183, 302, 230)
@@ -31,7 +37,7 @@ class Room5 < Scene
                 .clickable
                 .callback {
       if Inventory.instance.selectedItem != nil
-       if Inventory.instance.selectedItem.getTitle == 'keycard'
+        if Inventory.instance.selectedItem.getTitle == 'keycard'
           Inventory.instance.dropSelected
           clearMiddleground
           addMiddlegroundImage('room5/room5_1mb.png')

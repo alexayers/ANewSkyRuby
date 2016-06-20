@@ -19,8 +19,14 @@ class Room18 < Scene
 
     addForegroundImage('room18/room18_1f.png')
 
-    addDoor(Door.new(286, 0, 350, 350, 'room19', 'walk_building.ogg'))
-    addDoor(Door.new(131, 142, 248, 267, 'room5', 'slide_door.ogg'))
+    addDoor(Door.new(286, 0, 350, 350)
+                .destination('room19')
+                .walkSound('walk_building.ogg')
+    )
+    addDoor(Door.new(131, 142, 248, 267)
+                .destination('room5')
+                .walkSound('slide_door.ogg')
+    )
 
 
     addItem(Item.new(90, 183, 118, 269)

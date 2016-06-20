@@ -22,9 +22,18 @@ class Room19 < Scene
     addMiddlegroundImage('room19/room19_5m.png')
     addMiddlegroundImage('room19/room19_6m.png')
 
-    addDoor(Door.new(0, 0, 46, 350,'room18','walk_building.ogg'))
-    addDoor(Door.new(109, 154, 163, 207,'room25','walk_computer.ogg'))
-    addDoor(Door.new(185, 221, 254, 257,'room30','walk_computer.ogg'))
+    addDoor(Door.new(0, 0, 46, 350)
+                .destination('room18')
+                .walkSound('walk_building.ogg')
+    )
+    addDoor(Door.new(109, 154, 163, 207)
+                .destination('room25')
+                .walkSound('walk_computer.ogg')
+    )
+    addDoor(Door.new(185, 221, 254, 257)
+                .destination('room30')
+                .walkSound('walk_computer.ogg')
+    )
 
     addAmbience('maproom.ogg')
 

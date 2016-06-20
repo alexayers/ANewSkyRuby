@@ -15,11 +15,13 @@ class Begin < Scene
     addAmbience('begin.ogg')
 
 
-    addDoor(Door.new(0,0,350,350,'room1', nil))
+    addDoor(Door.new(0, 0, 350, 350)
+                .destination('room1')
+                .clickSound(nil)
+    )
 
 
   end
-
 
 
 end

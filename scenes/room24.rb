@@ -11,7 +11,10 @@ class Room24 < Scene
   def initialize
     super
     addBackgroundImage('room24/room24_1b.png')
-    addDoor(Door.new(315, 0, 350, 350,'room15','walk_building.ogg'))
+    addDoor(Door.new(315, 0, 350, 350)
+                .destination('room15')
+                .walkSound('walk_building.ogg')
+    )
     addAmbience('cave.ogg')
 
   end
@@ -20,7 +23,10 @@ class Room24 < Scene
     clearBackground
     addBackgroundImage('room24/room24_1bb.png')
 
-    addDoor(Door.new(134, 89, 234, 168,'room32','walk_sand.ogg'))
+    addDoor(Door.new(134, 89, 234, 168)
+                .destination('room32')
+                .walkSound('walk_sand.ogg')
+    )
 
   end
 

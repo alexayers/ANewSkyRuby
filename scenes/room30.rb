@@ -24,8 +24,14 @@ class Room30 < Scene
     addMiddlegroundImage('room30/room30_3m.png')
     addMiddlegroundImage('room30/room30_4m.png')
 
-    addDoor(Door.new(0, 0, 47, 296, 'room19', 'walk_computer.ogg'))
-    addDoor(Door.new(291, 0, 350, 296, 'room19', 'walk_computer.ogg'))
+    addDoor(Door.new(0, 0, 47, 296)
+                .destination('room19')
+                .walkSound('walk_computer.ogg')
+    )
+    addDoor(Door.new(291, 0, 350, 296)
+                .destination('room19')
+                .walkSound('walk_computer.ogg')
+    )
 
     addItem(Item.new(nil, nil, nil, nil)
                 .title('mapPad')

@@ -21,8 +21,15 @@ class Room1 < Scene
     addForegroundImage('room1/room1_3f.png')
     addAmbience('bad_light.ogg')
 
-    addDoor(Door.new(0, 0, 42, 348, 'room2', 'walk_building.ogg'))
-    addDoor(Door.new(77, 142, 161, 269, 'room4', 'walk_building.ogg', true)
+    addDoor(Door.new(0, 0, 42, 348)
+                .destination('room2')
+                .walkSound('walk_building.ogg')
+    )
+
+    addDoor(Door.new(77, 142, 161, 269)
+                .destination('room4')
+                .walkSound('walk_building.ogg')
+                .lockDoor
                 .title('broken_door')
     )
 
@@ -30,7 +37,7 @@ class Room1 < Scene
                 .title('key')
                 .filename('key.png')
                 .grabable
-    .clickSound('pickup_keys.ogg')
+                .clickSound('pickup_keys.ogg')
                 .onScreen
     )
 
@@ -45,7 +52,7 @@ class Room1 < Scene
           Inventory.instance.dropSelected
           clearBackground
           addBackgroundImage('room1/room1_1bb.png')
-          EventBus.instance.publishEvent(Event.new('broken_door','unlock'))
+          EventBus.instance.publishEvent(Event.new('broken_door', 'unlock'))
           AudioManager.instance.play('break_door.ogg')
         end
 

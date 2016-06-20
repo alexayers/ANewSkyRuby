@@ -12,9 +12,16 @@ class Room13 < Scene
     super
     addBackgroundImage('room13/room13_1b.png')
 
-    addDoor(Door.new(0, 0, 63, 350,'room12','walk_sand.ogg'))
-    addDoor(Door.new(283, 0, 350, 350,'room14','walk_sand.ogg'))
-    addDoor(Door.new(114, 88, 265, 257,'room15','walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room12')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(283, 0, 350, 350)
+                .destination('room14')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(114, 88, 265, 257)
+                .destination('room15')
+                .walkSound('walk_sand.ogg')
+    )
 
     addAmbience('waves.ogg')
   end

@@ -18,7 +18,10 @@ class Room17 < Scene
     addMiddlegroundImage('room17/room17_3m.png')
     addForegroundImage('room17/room17_1f.png')
 
-    addDoor(Door.new(0, 0, 63, 350, 'room16', 'walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room16')
+                .walkSound('walk_sand.ogg')
+    )
 
 
     addItem(Item.new(98, 78, 251, 175)

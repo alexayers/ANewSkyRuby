@@ -21,9 +21,15 @@ class Room33 < Scene
     addMiddlegroundImage('room33/room33_1m.png')
 
 
-    addDoor(Door.new(0, 0, 23, 201, 'room21', 'walk_sand.ogg'))
-    addDoor(Door.new(322, 0, 350, 350, 'room21', 'walk_sand.ogg'))
-    addDoor(Door.new(0, 307, 350, 350, 'room21', 'walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 23, 201)
+                .destination('room21')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(322, 0, 350, 35)
+                .destination('room21')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(0, 307, 350, 350)
+                .destination('room21')
+                .walkSound('walk_sand.ogg'))
 
 
     addItem(Item.new(41, 239, 84, 302)

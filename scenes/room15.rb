@@ -18,9 +18,18 @@ class Room15 < Scene
     addForegroundImage('room15/room15_1f.png')
 
 
-    addDoor(Door.new(0, 0, 63, 350,'room24','walk_sand.ogg'))
-    addDoor(Door.new(315, 0, 350, 350,'room16','walk_sand.ogg'))
-    addDoor(Door.new(84, 98, 267, 258,'room13','walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room24')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(315, 0, 350, 350)
+                .destination('room16')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(84, 98, 267, 258)
+                .destination('room13')
+                .walkSound('walk_sand.ogg')
+    )
 
 
     addAmbience('cave.ogg')

@@ -17,9 +17,18 @@ class Room23 < Scene
     addMiddlegroundImage('room23/room23_3m.png')
     addMiddlegroundImage('room23/room23_4m.png')
 
-    addDoor(Door.new(0, 0, 350, 187,'room12','walk_sand.ogg'))
-    addDoor(Door.new(210, 261, 350, 350,'room12','walk_sand.ogg'))
-    addDoor(Door.new(0, 196, 65, 233,'room26','walk_computer.ogg'))
+    addDoor(Door.new(0, 0, 350, 187)
+                .destination('room12')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(210, 261, 350, 350)
+                .destination('room12')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(0, 196, 65, 233)
+                .destination('room26')
+                .walkSound('walk_computer.ogg')
+    )
 
     addAmbience('waves.ogg')
   end

@@ -19,8 +19,12 @@ class Room8 < Scene
     addMiddlegroundImage('room8/room8_3m.png')
     addMiddlegroundImage('room8/room8_4m.png')
 
-    addDoor(Door.new(0, 0, 63, 350,'room7','walk_sand.ogg'))
-    addDoor(Door.new(281, 0, 350, 350,'room9','walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room7')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(281, 0, 350, 350)
+                .destination('room9')
+                .walkSound('walk_sand.ogg'))
 
     addAmbience('wind.ogg')
 

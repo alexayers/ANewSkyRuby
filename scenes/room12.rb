@@ -15,10 +15,24 @@ class Room12 < Scene
     addBackgroundImage('room12/room12_3b.png')
     addBackgroundImage('room12/room12_4b.png')
 
-    addDoor(Door.new(0, 0, 63, 350,'room20','walk_sand.ogg'))
-    addDoor(Door.new(315, 0, 350, 350,'room13','walk_sand.ogg'))
-    addDoor(Door.new(235, 154, 294, 195,'room29','walk_sand.ogg',true).title('energy_door'))
-    addDoor(Door.new(105, 165, 211, 261,'room23','walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room20')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(315, 0, 350, 350)
+                .destination('room13')
+                .walkSound('walk_sand.ogg'))
+    addDoor(Door.new(235, 154, 294, 195)
+                .destination('room29')
+                .walkSound('walk_sand.ogg')
+                .lockDoor
+                .title('energy_door')
+    )
+
+    addDoor(Door.new(105, 165, 211, 261)
+                .destination('room23')
+                .walkSound('walk_sand.ogg')
+    )
 
     addAmbience('waves.ogg')
   end
@@ -30,7 +44,6 @@ class Room12 < Scene
     addBackgroundImage('room12/room12_2bb.png')
     addBackgroundImage('room12/room12_3bb.png')
     addBackgroundImage('room12/room12_4bb.png')
-
 
 
   end

@@ -16,8 +16,15 @@ class Room31 < Scene
     addBackgroundImage('room31/room31_1b.png')
 
 
-    addDoor(Door.new(0, 0, 350, 130, 'room3', 'open_toolbox.ogg'))
-    addDoor(Door.new(0, 239, 350, 350, 'room3', 'open_toolbox.ogg'))
+    addDoor(Door.new(0, 0, 350, 130)
+                .destination('room3')
+                .walkSound('open_toolbox.ogg')
+    )
+    addDoor(Door.new(0, 239, 350, 350)
+                .destination('room3')
+                .walkSound('open_toolbox.ogg')
+    )
+
     addAmbience('bad_light.ogg')
 
     addItem(Item.new(128, 164, 294, 230)

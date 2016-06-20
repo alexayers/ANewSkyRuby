@@ -16,7 +16,10 @@ class Room26 < Scene
     super
     addBackgroundImage('room26/room26_1b.png')
 
-    addDoor(Door.new(0, 0, 350, 181, 'room23', 'walk_computer.ogg'))
+    addDoor(Door.new(0, 0, 350, 181)
+                .destination('room23')
+                .walkSound('walk_computer.ogg')
+    )
 
 
     addItem(Item.new(222, 120, 329, 164)
@@ -132,7 +135,7 @@ class Room26 < Scene
             y >= 273 && y <= 337
           _keyCodeValue += 'a,'
           AudioManager.instance.play('computer_type.ogg')
-      end
+        end
 
         ItemManager.instance.getItem('keypad_enter').value(_keyCodeValue)
       end

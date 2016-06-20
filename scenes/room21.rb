@@ -24,8 +24,14 @@ class Room21 < Scene
     addForegroundImage('room21/room21_3f.png')
     addForegroundImage('room21/room21_2f.png')
 
-    addDoor(Door.new(297, 0, 350, 350, 'room20', 'walk_sand.ogg'))
-    addDoor(Door.new(250, 152, 288, 219, 'room33', 'walk_sand.ogg'))
+    addDoor(Door.new(297, 0, 350, 350)
+                .destination('room20')
+                .walkSound('walk_sand.ogg')
+    )
+    addDoor(Door.new(250, 152, 288, 219)
+                .destination('room33')
+                .walkSound('walk_sand.ogg')
+    )
 
     addItem(Item.new(98, 61, 226, 279)
                 .clickable

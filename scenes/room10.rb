@@ -24,12 +24,15 @@ class Room10 < Scene
     addForegroundImage('room10/room10_3f.png')
     addForegroundImage('room10/room10_4f.png')
 
-    addDoor(Door.new(0, 0, 63, 350, 'room9', 'walk_sand.ogg'))
+    addDoor(Door.new(0, 0, 63, 350)
+                .destination('room9')
+                .walkSound('walk_sand.ogg')
+    )
 
     addItem(Item.new(219, 66, 297, 281)
                 .clickable
                 .title('parachute')
-    .clickSound('sail.ogg')
+                .clickSound('sail.ogg')
                 .callback {
       clearMiddleground
       addMiddlegroundImage('room10/room10_no_chute_m.png')

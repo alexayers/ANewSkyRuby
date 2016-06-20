@@ -21,7 +21,11 @@ class EventBus
   def publishEvent(event)
 
     if @listeners.key?(event.target)
-      @listeners[event.target].processEvent(event)
+      begin
+        @listeners[event.target].processEvent(event)
+      rescue
+        puts 'Unable to deliver event ' + event.target
+      end
     else
       puts 'Unknown event target ' + event.target
     end

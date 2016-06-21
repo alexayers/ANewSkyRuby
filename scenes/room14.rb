@@ -27,18 +27,16 @@ class Room14 < Scene
                 .title('grave')
                 .clickable
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'shovel'
-          Inventory.instance.dropSelected
-          clearMiddleground
-          addMiddlegroundImage('room14/room14_1mb.png')
-          AudioManager.instance.play('dig.ogg')
+      if Inventory.instance.isSelectedItem('shovel')
+        Inventory.instance.dropSelected
+        clearMiddleground
+        addMiddlegroundImage('room14/room14_1mb.png')
+        AudioManager.instance.play('dig.ogg')
 
-          _purpleCrystal = Item.new(nil, nil, nil, nil)
-                               .filename('purple_crystal.png')
-                               .title('purple_crystal')
-          Inventory.instance.addToInventory(_purpleCrystal)
-        end
+        _purpleCrystal = Item.new(nil, nil, nil, nil)
+                             .filename('purple_crystal.png')
+                             .title('purple_crystal')
+        Inventory.instance.addToInventory(_purpleCrystal)
       end
 
 

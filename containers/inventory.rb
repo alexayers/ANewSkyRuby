@@ -99,6 +99,19 @@ class Inventory
 
   end
 
+  def isSelectedItem(itemName)
+    if selectedItem != nil
+      if selectedItem.getTitle == itemName
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
+
+  end
+
   def addToInventory(itemToAdd)
     _idx = 0
 

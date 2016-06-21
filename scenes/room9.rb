@@ -37,21 +37,19 @@ class Room9 < Scene
                 .clickSound('rocks.ogg')
                 .value('')
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'purple_crystal'
-          ItemManager.instance.getItem('purple_pilar').value('fixed')
-          Inventory.instance.dropSelected
+      if Inventory.instance.isSelectedItem('purple_crystal')
+        ItemManager.instance.getItem('purple_pilar').value('fixed')
+        Inventory.instance.dropSelected
 
-          if ItemManager.instance.getItem('pink_pilar').getValue == 'fixed'
-            clearMiddleground
-            addMiddlegroundImage('room9/room9_1m_all.png')
-            addMiddlegroundImage('room9/room9_2m_all.png')
-            addMiddlegroundImage('room9/room9_3m_all.png')
-            EventBus.instance.publishEvent(Event.new('room30', 'updateMap'))
-          else
-            clearMiddleground
-            addMiddlegroundImage('room9/room9_1m_purple.png')
-          end
+        if ItemManager.instance.getItem('pink_pilar').getValue == 'fixed'
+          clearMiddleground
+          addMiddlegroundImage('room9/room9_1m_all.png')
+          addMiddlegroundImage('room9/room9_2m_all.png')
+          addMiddlegroundImage('room9/room9_3m_all.png')
+          EventBus.instance.publishEvent(Event.new('room30', 'updateMap'))
+        else
+          clearMiddleground
+          addMiddlegroundImage('room9/room9_1m_purple.png')
         end
       end
     })
@@ -62,21 +60,19 @@ class Room9 < Scene
                 .clickSound('rocks.ogg')
                 .value('')
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'pink_crystal'
-          ItemManager.instance.getItem('pink_pilar').value('fixed')
-          Inventory.instance.dropSelected
+      if Inventory.instance.isSelectedItem('pink_crystal')
+        ItemManager.instance.getItem('pink_pilar').value('fixed')
+        Inventory.instance.dropSelected
 
-          if ItemManager.instance.getItem('purple_pilar').getValue == 'fixed'
-            clearMiddleground
-            addMiddlegroundImage('room9/room9_1m_all.png')
-            addMiddlegroundImage('room9/room9_2m_all.png')
-            addMiddlegroundImage('room9/room9_3m_all.png')
-            EventBus.instance.publishEvent(Event.new('room30', 'updateMap'))
-          else
-            clearMiddleground
-            addMiddlegroundImage('room9/room9_1m_pink.png')
-          end
+        if ItemManager.instance.getItem('purple_pilar').getValue == 'fixed'
+          clearMiddleground
+          addMiddlegroundImage('room9/room9_1m_all.png')
+          addMiddlegroundImage('room9/room9_2m_all.png')
+          addMiddlegroundImage('room9/room9_3m_all.png')
+          EventBus.instance.publishEvent(Event.new('room30', 'updateMap'))
+        else
+          clearMiddleground
+          addMiddlegroundImage('room9/room9_1m_pink.png')
         end
       end
     })

@@ -65,7 +65,7 @@ class Scene
 
   def playAmbience
     if @ambientSound != nil
-     AudioManager.instance.playLooped(@ambientSound)
+      AudioManager.instance.playLooped(@ambientSound)
     end
 
   end
@@ -81,7 +81,7 @@ class Scene
 
   def addDoor(door)
     if door.getTitle != nil
-      EventBus.instance.registerListener(door.getTitle,door)
+      EventBus.instance.registerListener(door.getTitle, door)
     end
 
     @doors.push(door)
@@ -121,7 +121,7 @@ class Scene
 
   end
 
-  def processClick(x,y)
+  def processClick(x, y)
 
     @items.each {
         |item|
@@ -137,7 +137,7 @@ class Scene
     }
 
     if @clickCallBack != nil
-      @clickCallBack.call(x,y)
+      @clickCallBack.call(x, y)
     end
   end
 

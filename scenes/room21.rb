@@ -39,18 +39,16 @@ class Room21 < Scene
                 .title('sailboat')
                 .callback {
 
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'parachute'
-          Inventory.instance.dropSelected
-          ItemManager.instance.getItem('sailboat').value('ready')
+      if Inventory.instance.isSelectedItem('parachute')
+        Inventory.instance.dropSelected
+        ItemManager.instance.getItem('sailboat').value('ready')
 
-          clearForeground
-          addForegroundImage('room21/room21_1fb.png')
-          addForegroundImage('room21/room21_2fb.png')
-          addForegroundImage('room21/room21_3fb.png')
-          addForegroundImage('room21/room21_2fb.png')
-          AudioManager.instance.play('sail.ogg')
-        end
+        clearForeground
+        addForegroundImage('room21/room21_1fb.png')
+        addForegroundImage('room21/room21_2fb.png')
+        addForegroundImage('room21/room21_3fb.png')
+        addForegroundImage('room21/room21_2fb.png')
+        AudioManager.instance.play('sail.ogg')
       end
 
     }

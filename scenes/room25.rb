@@ -32,27 +32,24 @@ class Room25 < Scene
     addItem(Item.new(53, 219, 106, 252)
                 .clickable
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'storage_device'
-          clearBackground
-          addBackgroundImage('room25/room25_1bb.png')
-          addBackgroundImage('room25/room25_2bb.png')
-          addBackgroundImage('room25/room25_3bb.png')
-          addBackgroundImage('room25/room25_4bb.png')
+      if Inventory.instance.isSelectedItem('storage_device')
+        clearBackground
+        addBackgroundImage('room25/room25_1bb.png')
+        addBackgroundImage('room25/room25_2bb.png')
+        addBackgroundImage('room25/room25_3bb.png')
+        addBackgroundImage('room25/room25_4bb.png')
 
-          addMiddlegroundImage('room25/room25_1m.png')
+        addMiddlegroundImage('room25/room25_1m.png')
 
-          _mapPadEnter = ItemManager.instance.getItem('mapPadEnter')
+        _mapPadEnter = ItemManager.instance.getItem('mapPadEnter')
 
-          if _mapPadEnter.getValue == 'ready'
-            addForegroundImage('room25/room25_1f_map.png')
-          else
-            addForegroundImage('room25/room25_1f.png')
-          end
-
-          Inventory.instance.dropSelected
-
+        if _mapPadEnter.getValue == 'ready'
+          addForegroundImage('room25/room25_1f_map.png')
+        else
+          addForegroundImage('room25/room25_1f.png')
         end
+
+        Inventory.instance.dropSelected
       end
     })
 

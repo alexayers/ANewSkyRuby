@@ -46,16 +46,14 @@ class Room1 < Scene
                 .clickable
                 .value('broken')
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if ItemManager.instance.getItem('broken_cardreader').getValue == 'broken' && Inventory.instance.selectedItem.getTitle == 'hammer'
+      if Inventory.instance.isSelectedItem('hammer') &&
+        ItemManager.instance.getItem('broken_cardreader').getValue == 'broken'
           ItemManager.instance.getItem('broken_cardreader').value('fixed')
           Inventory.instance.dropSelected
           clearBackground
           addBackgroundImage('room1/room1_1bb.png')
           EventBus.instance.publishEvent(Event.new('broken_door', 'unlock'))
           AudioManager.instance.play('break_door.ogg')
-        end
-
       else
         AudioManager.instance.play('bad_code.ogg')
       end

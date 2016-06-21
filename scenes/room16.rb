@@ -40,23 +40,20 @@ class Room16 < Scene
                 .clickable
                 .value('not_powered')
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'power_cell'
-          ItemManager.instance.getItem('generator').value('powered')
-          Inventory.instance.dropSelected
-          ItemManager.instance.getItem('generator').makeUnclickable
+      if Inventory.instance.isSelectedItem('power_cell')
+        ItemManager.instance.getItem('generator').value('powered')
+        Inventory.instance.dropSelected
+        ItemManager.instance.getItem('generator').makeUnclickable
 
-          clearForeground
-          addForegroundImage('room16/room16_1fb.png')
+        clearForeground
+        addForegroundImage('room16/room16_1fb.png')
 
-          EventBus.instance.publishEvent(Event.new('room24', 'power'))
-          EventBus.instance.publishEvent(Event.new('room17', 'power'))
+        EventBus.instance.publishEvent(Event.new('room24', 'power'))
+        EventBus.instance.publishEvent(Event.new('room17', 'power'))
 
-          EventBus.instance.publishEvent(Event.new('broken_door', 'unlock'))
+        EventBus.instance.publishEvent(Event.new('broken_door', 'unlock'))
 
-          AudioManager.instance.play('remove_power.ogg')
-        end
-
+        AudioManager.instance.play('remove_power.ogg')
       else
         AudioManager.instance.play('empty_supply.ogg')
       end

@@ -37,15 +37,12 @@ class Room33 < Scene
                 .title('navStorage')
                 .callback {
 
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'gpsDevice'
-          ItemManager.instance.getItem('navStorage').value('ready')
-          Inventory.instance.dropSelected
-          clearMiddleground
-          addMiddlegroundImage('room33/room33_1mb.png')
-          AudioManager.instance.play('good_code.ogg')
-        end
-
+      if Inventory.instance.isSelectedItem('gpsDevice')
+        ItemManager.instance.getItem('navStorage').value('ready')
+        Inventory.instance.dropSelected
+        clearMiddleground
+        addMiddlegroundImage('room33/room33_1mb.png')
+        AudioManager.instance.play('good_code.ogg')
       else
         AudioManager.instance.play('bad_code.ogg')
       end

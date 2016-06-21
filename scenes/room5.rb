@@ -37,17 +37,15 @@ class Room5 < Scene
                 .title('keyreader')
                 .clickable
                 .callback {
-      if Inventory.instance.selectedItem != nil
-        if Inventory.instance.selectedItem.getTitle == 'keycard'
-          Inventory.instance.dropSelected
-          clearMiddleground
-          addMiddlegroundImage('room5/room5_1mb.png')
-          addMiddlegroundImage('room5/room5_2mb.png')
+      if Inventory.instance.isSelectedItem('keycard')
+        Inventory.instance.dropSelected
+        clearMiddleground
+        addMiddlegroundImage('room5/room5_1mb.png')
+        addMiddlegroundImage('room5/room5_2mb.png')
 
-          EventBus.instance.publishEvent(Event.new('slide_door', 'unlock'))
+        EventBus.instance.publishEvent(Event.new('slide_door', 'unlock'))
 
-          AudioManager.instance.play('slide_door.ogg')
-        end
+        AudioManager.instance.play('slide_door.ogg')
       end
 
 

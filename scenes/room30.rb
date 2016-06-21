@@ -4,7 +4,7 @@ require_relative '../clickable/item'
 require_relative '../containers/inventory'
 require_relative '../event/eventbus'
 require_relative '../event/event'
-require_relative '../managers/audioManager'
+require_relative '../managers/audiomanager'
 require 'gosu'
 
 # @author Alex Ayers <ayers.alex@gmail.com>

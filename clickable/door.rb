@@ -1,6 +1,6 @@
 require_relative '../event/eventbus'
 require_relative '../containers/inventory'
-require_relative '../managers/audioManager'
+require_relative '../managers/audiomanager'
 require_relative 'clickbox'
 require 'gosu'
 

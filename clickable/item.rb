@@ -87,10 +87,7 @@ class Item < ClickBox
       return
     end
 
-    if x >= @lx &&
-        x <= @hx &&
-        y >= @ly &&
-        y <= @hy
+    if isPointInSquare(x,y)
 
       if @clickSound != nil
         AudioManager.instance.play(@clickSound)

@@ -40,10 +40,7 @@ class Door < ClickBox
 
   def isPointWithinDoor(x, y)
 
-    if x >= @lx &&
-        x <= @hx &&
-        y >= @ly &&
-        y <= @hy
+    if isPointInSquare(x,y)
 
       if @clickSound != nil
         AudioManager.instance.play(@clickSound)

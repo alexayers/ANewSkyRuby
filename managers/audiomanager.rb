@@ -48,7 +48,6 @@ class AudioManager
   end
 
   def loadAudio(filename)
-    # @sounds[filename] = Gosu::Sample.new('resources/audio/' + filename)
     @sounds[filename] = Sound.new(filename)
   end
 

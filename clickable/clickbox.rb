@@ -1,12 +1,10 @@
-
-
 # @author Alex Ayers <ayers.alex@gmail.com>
 # 6/20/2016
 # Base class for clickable screen objects
 
 class ClickBox
 
-  def initialize(lx,ly,hx,hy)
+  def initialize(lx, ly, hx, hy)
     @lx = lx
     @ly = ly
     @hx = hx
@@ -30,4 +28,21 @@ class ClickBox
     return @title
   end
 
+  #           hx
+  #     |------| hy
+  #     |      |
+  #  ly |______|
+  #     lx
+
+  def isPointInSquare(x, y)
+    if x >= @lx &&
+        x <= @hx &&
+        y >= @ly &&
+        y <= @hy
+      return true
+    else
+      return false
+    end
+
+  end
 end

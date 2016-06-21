@@ -1,23 +1,19 @@
 require_relative 'event/eventbus'
 require_relative 'inventory'
 require_relative 'audioManager'
+require_relative 'clickbox'
 require 'gosu'
 
 # @author Alex Ayers <ayers.alex@gmail.com>
 # 6/19/2016
 # Door object for moving between scenes
 
-class Door
+class Door < ClickBox
 
   def initialize(lx, ly, hx, hy)
-    @lx = lx
-    @ly = ly
-    @hx = hx
-    @hy = hy
-    @title = nil
+    super
     @key = nil
     @isLocked = false
-    @clickSound = nil
     return self
   end
 
@@ -36,24 +32,10 @@ class Door
     return self
   end
 
-  def clickSound(filename)
-    @clickSound = filename
-    return self
-  end
-
   def key(key)
     @isLocked = true
     @key = key
     return self
-  end
-
-  def title(title)
-    @title = title
-    return self
-  end
-
-  def getTitle
-    return @title
   end
 
   def isPointWithinDoor(x, y)

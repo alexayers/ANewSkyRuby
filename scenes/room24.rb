@@ -13,7 +13,7 @@ class Room24 < Scene
     addBackgroundImage('room24/room24_1b.png')
     addDoor(Door.new(315, 0, 350, 350)
                 .destination('room15')
-                .walkSound('walk_building.ogg')
+                .walkSound('walk_sand.ogg')
     )
     addAmbience('cave.ogg')
 
@@ -25,7 +25,7 @@ class Room24 < Scene
 
     addDoor(Door.new(134, 89, 234, 168)
                 .destination('room32')
-                .walkSound('walk_sand.ogg')
+                .walkSound('walk_computer.ogg')
     )
 
   end

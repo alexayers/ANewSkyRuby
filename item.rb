@@ -1,25 +1,19 @@
 require 'gosu'
 require_relative 'inventory'
 require_relative 'audioManager'
+require_relative 'clickbox'
 
 # @author Alex Ayers <ayers.alex@gmail.com>
 # 6/19/2016
 # Items (things that can be picked up) and hitboxes (Things that can't be picked up)
 
-class Item
+class Item < ClickBox
 
   def initialize(lx,ly,hx,hy)
-    @lx = lx
-    @ly = ly
-    @hx = hx
-    @hy = hy
+    super
 
-    @title = ''
-    @image = nil
     @imageExamine = nil
     @value = ''
-    @clickSound = nil
-
     @canGrab = false
     @onScreen = false
     @canClick = false
@@ -45,16 +39,6 @@ class Item
 
   def callback(&block)
     @callBack = block
-    return self
-  end
-
-  def title(title)
-    @title = title
-    return self
-  end
-
-  def clickSound(clickSound)
-    @clickSound = clickSound
     return self
   end
 
@@ -89,10 +73,6 @@ class Item
       return @imageExamine
     end
 
-  end
-
-  def getTitle
-    return @title
   end
 
   def render

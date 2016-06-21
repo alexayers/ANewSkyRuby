@@ -45,6 +45,7 @@ class Room32 < Scene
                            .title('storage_device')
                            .value('empty')
       Inventory.instance.addToInventory(_storageDevice)
+      AudioManager.instance.play('good_code.ogg')
 
     })
 

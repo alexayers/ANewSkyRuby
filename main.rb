@@ -1,6 +1,6 @@
 require 'gosu'
-require_relative 'scenemanager'
-require_relative 'inventory'
+require_relative 'managers/scenemanager'
+require_relative 'containers/inventory'
 
 # @author Alex Ayers <ayers.alex@gmail.com>
 # 6/19/2016

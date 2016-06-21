@@ -1,7 +1,7 @@
-require_relative 'animatedframe'
-require_relative 'door'
-require_relative 'itemmanager'
-require_relative 'audioManager'
+require_relative '../containers/animatedframe'
+require_relative '../clickable/door'
+require_relative '../managers/itemmanager'
+require_relative '../managers/audioManager'
 require 'gosu'
 
 # @author Alex Ayers <ayers.alex@gmail.com>

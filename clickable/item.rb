@@ -1,6 +1,6 @@
 require 'gosu'
-require_relative 'inventory'
-require_relative 'audioManager'
+require_relative '../containers/inventory'
+require_relative '../managers/audioManager'
 require_relative 'clickbox'
 
 # @author Alex Ayers <ayers.alex@gmail.com>

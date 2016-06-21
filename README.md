@@ -1,5 +1,4 @@
 ## A New Sky
--Porting A New Sky to Ruby
 
 ## How to play
 

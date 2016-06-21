@@ -8,7 +8,9 @@
 ## Dependencies
 
 SDL and GOSU
+
 > brew install sdl2
+
 > gem install gosu
 
 ## How to run
